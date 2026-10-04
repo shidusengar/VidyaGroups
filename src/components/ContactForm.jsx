@@ -20,7 +20,7 @@ export default function ContactForm({
 }) {
   const handleSubmit = () => {
     if (onSubmit) onSubmit();
-    else alert('Shukriya! Hamari team 24 ghante mein contact karegi. 🙏');
+    else alert('Shukriya! Hamari team 24 ghante mein contact karegi. ');
   };
 
   return (

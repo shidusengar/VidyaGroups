@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import VidyaLogo from './Logo';
 
 const FOOTER_BRANDS = [
@@ -8,10 +9,10 @@ const FOOTER_BRANDS = [
 ];
 
 const BIZ_LINKS = [
-  { id: 'solar',   label: '☀️ Solar Services' },
-  { id: 'hostel',  label: '🏠 Boys Hostel'    },
-  { id: 'mess',    label: '🍛 Vidya Mess'      },
-  { id: 'library', label: '📚 Library'         },
+  { id: '/solar',   label: 'Solar Services' },
+  { id: '/hostel',  label: 'Boys Hostel'    },
+  { id: '/mess',    label: 'Vidya Mess'      },
+  { id: '/library', label: 'Library'         },
 ];
 
 const SOLAR_LINKS = [
@@ -21,9 +22,10 @@ const SOLAR_LINKS = [
   'Subsidy Help',
 ];
 
-export default function Footer({ setActivePage }) {
+export default function Footer() {
+  const navigate = useNavigate();
   const go = (page) => {
-    setActivePage(page);
+    navigate(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -53,7 +55,7 @@ export default function Footer({ setActivePage }) {
           </div>
 
           <p>
-            Ghaziabad mein students aur homeowners ka trusted naam.
+            A trusted name for students and homeowners in Ghaziabad.
             Quality, care &amp; commitment.
           </p>
           <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', marginTop: 4 }}>
@@ -72,7 +74,7 @@ export default function Footer({ setActivePage }) {
 
         {/* ── Businesses ── */}
         <div className="footer-col">
-          <h4>Hamare Businesses</h4>
+          <h4>Our Businesses</h4>
           <ul>
             {BIZ_LINKS.map((l) => (
               <li key={l.id}><a onClick={() => go(l.id)}>{l.label}</a></li>
@@ -85,7 +87,7 @@ export default function Footer({ setActivePage }) {
           <h4>Solar Services</h4>
           <ul>
             {SOLAR_LINKS.map((l) => (
-              <li key={l}><a onClick={() => go('solar')}>{l}</a></li>
+              <li key={l}><a onClick={() => go('/solar')}>{l}</a></li>
             ))}
           </ul>
         </div>
@@ -94,9 +96,9 @@ export default function Footer({ setActivePage }) {
         <div className="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="tel:+919999993069">📞 +91 99999 93069</a></li>
-            <li><a href="https://wa.me/919999993069">💬 WhatsApp</a></li>
-            <li><a href="mailto:info@vidyagroups.in">✉️ info@vidyagroups.in</a></li>
+            <li><a href="tel:+919999993069">+91 99999 93069</a></li>
+            <li><a href="https://wa.me/919999993069">WhatsApp</a></li>
+            <li><a href="mailto:info@vidyagroups.in">info@vidyagroups.in</a></li>
           </ul>
         </div>
 
@@ -104,7 +106,6 @@ export default function Footer({ setActivePage }) {
 
       <div className="footer-bottom">
         <span>© 2026 Vidya Groups, Ghaziabad. All rights reserved.</span>
-        <span>Design and Developed by Nitin Sharma and <a style={{ textDecoration: "none", color: "white" }} target="_blank" href="https://kuldeeppanditg1234.wixsite.com/mysite">Kuldeep Dixit</a></span>
         <span style={{ color: 'rgba(255,255,255,0.3)' }}>Made with ❤️ in UP</span>
       </div>
     </footer>

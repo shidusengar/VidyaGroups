@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import Navbar        from './components/Navbar';
 import Footer        from './components/Footer';
@@ -12,24 +12,18 @@ import Library from './pages/Library';
 
 import './styles/global.css';
 
-const PAGES = {
-  home:    Home,
-  solar:   Solar,
-  hostel:  Hostel,
-  mess:    Mess,
-  library: Library,
-};
-
 export default function App() {
-  const [activePage, setActivePage] = useState('home');
-
-  const PageComponent = PAGES[activePage] ?? Home;
-
   return (
     <>
-      <Navbar activePage={activePage} setActivePage={setActivePage} />
-      <PageComponent setActivePage={setActivePage} />
-      <Footer setActivePage={setActivePage} />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/solar" element={<Solar />} />
+        <Route path="/hostel" element={<Hostel />} />
+        <Route path="/mess" element={<Mess />} />
+        <Route path="/library" element={<Library />} />
+      </Routes>
+      <Footer />
       <WhatsAppFloat />
     </>
   );

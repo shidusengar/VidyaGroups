@@ -1,19 +1,28 @@
+import { PhoneCall } from 'lucide-react';
 import { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import VidyaLogo from './Logo';
 
 const NAV_ITEMS = [
-  { id: 'home',    label: 'Home'       },
-  { id: 'solar',   label: '☀️ Solar'  },
-  { id: 'hostel',  label: '🏠 Hostel'  },
-  { id: 'mess',    label: '🍛 Mess'    },
-  { id: 'library', label: '📚 Library' },
+  { id: '/',       label: 'Home'       },
+  { id: '/solar',  label: 'Solar'  },
+  { id: '/hostel', label: 'Hostel'  },
+  { id: '/mess',   label: 'Mess'    },
+  { id: '/library',label: 'Library' },
+  { id: '/contact',label: 'Contact' },
 ];
 
-export default function Navbar({ activePage, setActivePage }) {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const go = (page) => {
-    setActivePage(page);
+  const go = (path) => {
+    navigate(path);
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavClick = () => {
     setMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -21,7 +30,7 @@ export default function Navbar({ activePage, setActivePage }) {
   return (
     <nav>
       {/* ── Logo ── */}
-      <div className="nav-logo" onClick={() => go('home')}>
+      <div className="nav-logo" onClick={() => go('/')}>
         {/* Circle badge: green-dark→green-main gradient + gold ring + white SVG logo */}
         <VidyaLogo size={44} variant="circle" />
 
@@ -35,12 +44,12 @@ export default function Navbar({ activePage, setActivePage }) {
       <ul className={`nav-center${menuOpen ? ' open' : ''}`}>
         {NAV_ITEMS.map((item) => (
           <li key={item.id}>
-            <a
-              className={activePage === item.id ? 'active' : ''}
-              onClick={() => go(item.id)}
+            <NavLink
+              to={item.id}
+              onClick={handleNavClick}
             >
               {item.label}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>
@@ -48,7 +57,7 @@ export default function Navbar({ activePage, setActivePage }) {
       {/* ── Right ── */}
       <div className="nav-right">
         <a href="tel:+919999993069" className="btn-call">
-          📞 <span>Call Karo</span>
+          <PhoneCall size={16} style={{marginRight: 6}} /> <span>Call Now</span>
         </a>
         <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           <span /><span /><span />

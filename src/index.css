@@ -1,24 +1,44 @@
 :root {
-      --green-dark:   #1a3c2e;
-      --green-mid:    #2d6a4f;
-      --green-main:   #40916c;
-      --green-light:  #74c69d;
-      --green-pale:   #d8f3dc;
-      --green-xpale:  #f0faf2;
-      --gold:         #f4a716;
-      --gold-light:   #fde68a;
-      --white:        #ffffff;
-      --off-white:    #f8fdf9;
-      --text-dark:    #0d2218;
-      --text-mid:     #2d5a40;
-      --text-muted:   #6b9d7e;
-      --border:       #c3e6cc;
-      --shadow-sm:    0 2px 12px rgba(26,60,46,0.08);
-      --shadow-md:    0 8px 32px rgba(26,60,46,0.14);
-      --shadow-lg:    0 20px 60px rgba(26,60,46,0.18);
-      --radius:       14px;
-      --radius-sm:    8px;
-    }
+  /* Clean Professional Corporate Blue & Gold */
+  --green-dark:   #0f172a; /* Deep Navy */
+  --green-mid:    #1e293b; /* Slate 800 */
+  --green-main:   #1d4ed8; /* Corporate Blue 700 */
+  --green-light:  #60a5fa; /* Blue 400 */
+  --green-pale:   #eff6ff; /* Blue 50 */
+  --green-xpale:  #f8fafc; /* Slate 50 */
+  --gold:         #d97706; /* Professional Gold/Amber 600 */
+  --gold-light:   #fef3c7; /* Amber 100 */
+  
+  --white:        #ffffff;
+  --off-white:    #f8fafc;
+  --text-dark:    #0f172a;
+  --text-mid:     #334155;
+  --text-muted:   #64748b;
+  --border:       #e2e8f0;
+  
+  --shadow-sm:    0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius:       12px;
+  --radius-sm:    6px;
+  
+  /* Service specific colors - using professional corporate shades */
+  --solar-color:   #d97706; /* Amber 600 */
+  --solar-dark:    #b45309; /* Amber 700 */
+  --solar-bg:      #fffbeb; /* Amber 50 */
+  
+  --hostel-color:  #1d4ed8; /* Blue 700 */
+  --hostel-dark:   #1e3a8a; /* Blue 900 */
+  --hostel-bg:     #eff6ff; /* Blue 50 */
+  
+  --mess-color:    #c2410c; /* Orange 700 */
+  --mess-dark:     #9a3412; /* Orange 800 */
+  --mess-bg:       #fff7ed; /* Orange 50 */
+  
+  --library-color: #4338ca; /* Indigo 700 */
+  --library-dark:  #3730a3; /* Indigo 800 */
+  --library-bg:    #eef2ff; /* Indigo 50 */
+}
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
